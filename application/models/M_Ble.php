@@ -13,11 +13,27 @@ class M_Ble extends CI_model
 		return $this->db->get($table, 1);
 	}
 
-	public function dataGrafik()
+	public function dataGrafik1()
 	{
-		$querry = $this->db->query('SELECT * FROM data WHERE id BETWEEN (SELECT MAX(ID) FROM data) - 5 AND (SELECT MAX(ID) FROM data);');
+		$querry = $this->db->query('SELECT * FROM data1 WHERE id BETWEEN (SELECT MAX(ID) FROM data1) - 5 AND (SELECT MAX(ID) FROM data1);');
 		return $querry->result_array();
-		// $this->db->order_by('id', 'ASC');
-		// return $this->db->get('data')->result();
+	}
+
+	public function dataGrafik2()
+	{
+		$querry = $this->db->query('SELECT * FROM data2 WHERE id BETWEEN (SELECT MAX(ID) FROM data2) - 5 AND (SELECT MAX(ID) FROM data2);');
+		return $querry->result_array();
+	}
+
+	public function dataGrafik3()
+	{
+		$querry = $this->db->query('SELECT * FROM data3 WHERE id BETWEEN (SELECT MAX(ID) FROM data3) - 5 AND (SELECT MAX(ID) FROM data3);');
+		return $querry->result_array();
+	}
+
+	public function dataGrafik4()
+	{
+		$querry = $this->db->query('SELECT * FROM data4 WHERE id BETWEEN (SELECT MAX(ID) FROM data4) - 5 AND (SELECT MAX(ID) FROM data4);');
+		return $querry->result_array();
 	}
 }

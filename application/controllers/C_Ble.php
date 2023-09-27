@@ -25,19 +25,37 @@ class C_Ble extends CI_Controller
 
 	public function ambildata()
 	{
-		$dataBle = $this->M_Ble->getAllData('data')->result();
+		$dataBle = $this->M_Ble->getAllData('data1')->result();
 		echo json_encode($dataBle);
 	}
 
 	public function ambildataterakhir()
 	{
-		$dataBle = $this->M_Ble->getLastData('data')->result();
+		$dataBle = $this->M_Ble->getLastData('data1')->result();
 		echo json_encode($dataBle);
 	}
 
-	public function grafik()
+	public function grafik1()
 	{
-		$data = $this->M_Ble->datagrafik();
+		$data = $this->M_Ble->datagrafik1();
+		echo json_encode($data);
+	}
+
+	public function grafik2()
+	{
+		$data = $this->M_Ble->datagrafik2();
+		echo json_encode($data);
+	}
+
+	public function grafik3()
+	{
+		$data = $this->M_Ble->datagrafik3();
+		echo json_encode($data);
+	}
+
+	public function grafik4()
+	{
+		$data = $this->M_Ble->datagrafik4();
 		echo json_encode($data);
 	}
 }
