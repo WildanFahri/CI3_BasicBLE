@@ -23,15 +23,45 @@ class C_Ble extends CI_Controller
 		$this->load->view('Templates/footer');
 	}
 
-	public function ambildata()
+	public function ambildata1()
 	{
 		$dataBle = $this->M_Ble->getAllData('data1')->result();
 		echo json_encode($dataBle);
 	}
+	public function ambildata2()
+	{
+		$dataBle = $this->M_Ble->getAllData('data2')->result();
+		echo json_encode($dataBle);
+	}
+	public function ambildata3()
+	{
+		$dataBle = $this->M_Ble->getAllData('data3')->result();
+		echo json_encode($dataBle);
+	}
+	public function ambildata4()
+	{
+		$dataBle = $this->M_Ble->getAllData('data4')->result();
+		echo json_encode($dataBle);
+	}
 
-	public function ambildataterakhir()
+	public function ambildataterakhir1()
 	{
 		$dataBle = $this->M_Ble->getLastData('data1')->result();
+		echo json_encode($dataBle);
+	}
+	public function ambildataterakhir2()
+	{
+		$dataBle = $this->M_Ble->getLastData('data2')->result();
+		echo json_encode($dataBle);
+	}
+	public function ambildataterakhir3()
+	{
+		$dataBle = $this->M_Ble->getLastData('data3')->result();
+		echo json_encode($dataBle);
+	}
+	public function ambildataterakhir4()
+	{
+		$dataBle = $this->M_Ble->getLastData('data4')->result();
 		echo json_encode($dataBle);
 	}
 

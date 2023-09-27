@@ -1,24 +1,61 @@
-<div class="container" id="container">
+<div class="container">
 	<div class="row">
-		<div class="col-md-12">
-			<div class="row mt-5">
-				<div class="col-md-12">
-					<h6>Data Heart Rate Terakhir
-						<a id="button" class="btn btn-success"></a>
-					</h6>
-				</div>
-				<!-- <canvas id="myChart" style="width:100%;max-width:700px"></canvas> -->
-				<!-- <div id="myChart" style="width:100%; max-width:600px; height:500px;"></div> -->
-			</div>
+		<div class="col-md-3">
 			<table class="table mt-2">
+				<h3 style="text-align: center;">Atlet 1</h3>
 				<thead class="thead-light">
 					<tr>
 						<th>ID</th>
-						<th>Heart Rate</th>
+						<th>Heart</th>
 						<th>Created at</th>
 					</tr>
 				</thead>
-				<tbody id="table">
+				<tbody id="table1">
+
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-3">
+			<table class="table mt-2">
+				<h3 style="text-align: center;">Atlet 2</h3>
+				<thead class="thead-light">
+					<tr>
+						<th>ID</th>
+						<th>Heart</th>
+						<th>Created at</th>
+					</tr>
+				</thead>
+				<tbody id="table2">
+
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-3">
+			<table class="table mt-2">
+				<h3 style="text-align: center;">Atlet 3</h3>
+				<thead class="thead-light">
+					<tr>
+						<th>ID</th>
+						<th>Heart</th>
+						<th>Created at</th>
+					</tr>
+				</thead>
+				<tbody id="table3">
+
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-3">
+			<table class="table mt-2">
+				<h3 style="text-align: center;">Atlet 4</h3>
+				<thead class="thead-light">
+					<tr>
+						<th>ID</th>
+						<th>Heart</th>
+						<th>Created at</th>
+					</tr>
+				</thead>
+				<tbody id="table4">
 
 				</tbody>
 			</table>
@@ -32,7 +69,7 @@
 <script>
 	setInterval(function() {
 		$.ajax({
-			url: '<?= base_url() . "C_Ble/ambildata" ?>',
+			url: '<?= base_url() . "C_Ble/ambildata1" ?>',
 			type: 'GET',
 			dataType: 'json',
 			success: function(data) {
@@ -44,23 +81,61 @@
 						'<td>' + data[i].created_at + '</td>' +
 						'<tr>';
 				}
-				$('#table').html(table);
+				$('#table1').html(table);
 			}
 		});
 	}, 0);
-
-
 	setInterval(function() {
 		$.ajax({
-			url: '<?= base_url() . "C_Ble/ambildataterakhir" ?>',
+			url: '<?= base_url() . "C_Ble/ambildata2" ?>',
 			type: 'GET',
 			dataType: 'json',
 			success: function(data) {
-				var last = '';
+				var table = '';
 				for (var i = 0; i < data.length; i++) {
-					last += data[i].data_ble;
+					table += '<tr>' +
+						'<td>' + data[i].id + '</td>' +
+						'<td>' + data[i].data_ble + '</td>' +
+						'<td>' + data[i].created_at + '</td>' +
+						'<tr>';
 				}
-				$('#button').html(last);
+				$('#table2').html(table);
+			}
+		});
+	}, 0);
+	setInterval(function() {
+		$.ajax({
+			url: '<?= base_url() . "C_Ble/ambildata3" ?>',
+			type: 'GET',
+			dataType: 'json',
+			success: function(data) {
+				var table = '';
+				for (var i = 0; i < data.length; i++) {
+					table += '<tr>' +
+						'<td>' + data[i].id + '</td>' +
+						'<td>' + data[i].data_ble + '</td>' +
+						'<td>' + data[i].created_at + '</td>' +
+						'<tr>';
+				}
+				$('#table3').html(table);
+			}
+		});
+	}, 0);
+	setInterval(function() {
+		$.ajax({
+			url: '<?= base_url() . "C_Ble/ambildata4" ?>',
+			type: 'GET',
+			dataType: 'json',
+			success: function(data) {
+				var table = '';
+				for (var i = 0; i < data.length; i++) {
+					table += '<tr>' +
+						'<td>' + data[i].id + '</td>' +
+						'<td>' + data[i].data_ble + '</td>' +
+						'<td>' + data[i].created_at + '</td>' +
+						'<tr>';
+				}
+				$('#table4').html(table);
 			}
 		});
 	}, 0);
