@@ -32,6 +32,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="<?= base_url(); ?>C_Ble/chart">Chart</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?= base_url(); ?>C_Nama">Nama</a>
+					</li>
 				</ul>
 			</div>
 		</nav>

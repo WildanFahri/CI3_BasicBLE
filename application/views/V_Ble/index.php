@@ -1,62 +1,25 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-12">
 			<table class="table mt-2">
-				<h3 style="text-align: center;">Atlet 1</h3>
 				<thead class="thead-light">
 					<tr>
-						<th>ID</th>
-						<th>Heart</th>
-						<th>Created at</th>
+						<th scope="col">ID Data</th>
+						<th scope="col">Nama</th>
+						<th scope="col">Data</th>
+						<th scope="col">Created at</th>
 					</tr>
 				</thead>
-				<tbody id="table1">
-
-				</tbody>
-			</table>
-		</div>
-		<div class="col-md-3">
-			<table class="table mt-2">
-				<h3 style="text-align: center;">Atlet 2</h3>
-				<thead class="thead-light">
-					<tr>
-						<th>ID</th>
-						<th>Heart</th>
-						<th>Created at</th>
-					</tr>
-				</thead>
-				<tbody id="table2">
-
-				</tbody>
-			</table>
-		</div>
-		<div class="col-md-3">
-			<table class="table mt-2">
-				<h3 style="text-align: center;">Atlet 3</h3>
-				<thead class="thead-light">
-					<tr>
-						<th>ID</th>
-						<th>Heart</th>
-						<th>Created at</th>
-					</tr>
-				</thead>
-				<tbody id="table3">
-
-				</tbody>
-			</table>
-		</div>
-		<div class="col-md-3">
-			<table class="table mt-2">
-				<h3 style="text-align: center;">Atlet 4</h3>
-				<thead class="thead-light">
-					<tr>
-						<th>ID</th>
-						<th>Heart</th>
-						<th>Created at</th>
-					</tr>
-				</thead>
-				<tbody id="table4">
-
+				<tbody>
+					<?php $i = 0;
+					foreach ($ble as $prd) : $i++ ?>
+						<tr>
+							<td><?= $i; ?></td>
+							<td><?= $prd['nama']; ?></td>
+							<td><?= $prd['data_ble']; ?></td>
+							<td><?= $prd['created_at']; ?></td>
+						</tr>
+					<?php endforeach ?>
 				</tbody>
 			</table>
 		</div>
